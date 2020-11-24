@@ -1,0 +1,191 @@
+﻿$fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
+
+@import 'common.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
+@import '_mixins.scss';
+@import '_colors.scss';
+@import '_variables.scss';
+@import '_global.scss';
+
+body {
+    background-color: $color;
+    margin-top: 75px;
+}
+
+.navbar{
+    background-color: darkslategrey;
+    height: 59px;
+}
+
+.nav-item a{
+    color: snow;
+}
+
+.navbar-brand{
+    padding-left: 2em;
+    padding-top: 20px;
+}
+.navbar-brand a {
+    color: snow;
+    font-size: .8em;
+}
+
+.menu-header{
+    font-size: 120%;
+    font-weight: bold;
+    margin-left: -15px;
+}
+
+.side-nav .collapsible .menu-header  a {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.invalid-message {
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #dc3545;
+}
+
+.invalid-note {
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #000000;
+}
+
+.chalkboard {
+    background-image: url('../img/stock/black-and-white-blackboard-business-356043.jpg');
+    background-size: cover;
+}
+.phone {
+    background-image: url('../img/stock/business-connection-contact-955081.jpg');
+    background-size: cover;
+}
+.forest {
+    background-image: url('../img/stock/fog-foggy-forest-158607.jpg');
+    background-size: cover;
+}
+.chalkboard2 {
+    background-image: url('../img/stock/blackboard-business-chalkboard-355988.jpg');
+    background-size: cover;
+}
+.works {
+    background-image: url('../img/stock/blur-close-up-code-546819.jpg');
+    background-size: cover;
+}
+.works2 {
+    background-image: url('../img/stock/apple-black-and-white-black-and-white-169573.jpg');
+    background-size: cover;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.fullscreen {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.form-dark .card {
+    background-color: rgba(0, 0, 0, 0.95);
+    color: #ccc;
+}
+.translucent .side-nav {
+    background-color: rgba(0, 0, 0, 0.90);
+    color: #ccc;
+}
+.form-dark .select-dropdown {
+    color: #fff;
+}
+
+.videocontent {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.70);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+
+.form-dark .font-small {
+    font-size: 0.8rem;
+}
+
+.form-dark [type="radio"] + label,
+.form-dark [type="checkbox"] + label {
+    font-size: 0.8rem;
+}
+
+.form-dark [type="checkbox"] + label:before {
+    top: 2px;
+    width: 15px;
+    height: 15px;
+}
+
+.form-dark .md-form label {
+    color: #ccc;
+}
+
+.form-dark input[type=text]:focus:not([readonly]) {
+    border-bottom: 1px solid #00C851;
+    -webkit-box-shadow: 0 1px 0 0 #00C851;
+    box-shadow: 0 1px 0 0 #00C851;
+}
+
+.form-dark input[type=text]:focus:not([readonly]) + label {
+    color: #fff;
+}
+
+.form-dark input[type=password]:focus:not([readonly]) {
+    border-bottom: 1px solid #00C851;
+    -webkit-box-shadow: 0 1px 0 0 #00C851;
+    box-shadow: 0 1px 0 0 #00C851;
+}
+
+.form-dark input[type=password]:focus:not([readonly]) + label {
+    color: #fff;
+}
+
+.form-dark input[type="checkbox"] + label:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 17px;
+    height: 17px;
+    z-index: 0;
+    border: 1.5px solid #fff;
+    border-radius: 1px;
+    margin-top: 2px;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.form-dark input[type="checkbox"]:checked + label:before {
+    top: -4px;
+    left: -3px;
+    width: 12px;
+    height: 22px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: transparent #00c851 #00c851 transparent;
+    -webkit-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    transform: rotate(40deg);
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+}

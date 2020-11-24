@@ -1,0 +1,74 @@
+﻿<div class="view fullscreen phone"></div>
+<!-- Contact form -->
+<div id="contact" class="container card">
+    <!--Section: Contact v.2-->
+    <section class="section">
+        <!--Section heading-->
+        <div class="view green-text">
+            <h1 class="text-center">Contact <strong>iTech Northwest</strong></h1>
+            <p class="text-center">
+                If you think we can help with a project or if you need to get in touch feel free to contact us. <br /><span class="invalid-note">(Do not contact iTech Northwest LLC for sales or marketing solicitation.)</span>
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <form class="container needs-validation" novalidate>
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div>
+                                <div>
+                                    <label for="inputName">Name</label>
+                                    <input type="text" id="inputName" class="form-control" placeholder="Your Name" data-bind="value: name, validationElement: name, css:{'is-valid': name.isValid()}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <div>
+                                    <label>Email</label>
+                                    <input type="text" id="form52" class="form-control" placeholder="Your Email" data-bind="value: email, validationElement: email, css:{'is-valid': email.isValid()}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div>
+                                <label>Subject</label>
+                                <input type="text" id="form51" class="form-control" placeholder="Subject" data-bind="value: subject, validationElement: subject, css:{'is-valid': subject.isValid()}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div>
+                                <label>Message</label>
+                                <textarea type="text" id="form76" class="md-textarea form-control" rows="3" placeholder="Message" data-bind="value: message, validationElement: message, css:{'is-valid': message.isValid()}"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="text-center text-md-left mt-4">
+                    <a class="btn btn-primary" data-bind="click: SendContactRequest">Send</a>
+                    <a class="btn btn-default" data-bind="click: Clear">Clear</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <ul class="contact-icons list-unstyled text-center">
+                    <li>
+                        <i class="fas fa-map-marker fa-2x"></i>
+                        <p>P.O. Box 41244 Eugene, OR 97404, USA</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone fa-2x"></i>
+                        <p>541 357 9005</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope fa-2x"></i>
+                        <p>info<i class="fas fa-at"></i>itechnw<i class="fas fa-circle" style="font-size: .5em; color: Tomato;"></i>com</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>

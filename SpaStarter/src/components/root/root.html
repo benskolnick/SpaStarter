@@ -1,0 +1,12 @@
+﻿<div>
+    <header>
+        <navbar params='router: router'></navbar>
+    </header>
+    <main>
+        <div class="container-fluid">
+            <section>
+                <div data-bind='component: { name: route().page, params: route }'></div>
+            </section>
+        </div>
+    </main>
+</div>
