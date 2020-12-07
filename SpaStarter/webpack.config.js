@@ -72,7 +72,8 @@ module.exports = (env = {}, argv = {}) => {
                     {
                         loader: 'awesome-typescript-loader',
                         options: {
-                            useCache: true
+                            useCache: true,
+                            useBabel: true
                         }
                     }
                 ]
