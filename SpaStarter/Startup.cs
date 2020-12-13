@@ -21,10 +21,10 @@ namespace SpaStarter
     using Formatters;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.StaticFiles;
+    using Microsoft.Extensions.Options;
     using Microsoft.Extensions.Primitives;
     using System.IO;
 
-    //using Services;
     public class Startup
     {
         public Startup(IConfiguration configuration, IWebHostEnvironment env)
@@ -47,7 +47,7 @@ namespace SpaStarter
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
             services.AddControllers();
             services.AddCors();
             services.AddHsts(options =>
@@ -95,8 +95,10 @@ namespace SpaStarter
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IOptions<AppSettings> appsettings)
         {
+            System.Reflection.AssemblyFileVersionAttribute version = (System.Reflection.AssemblyFileVersionAttribute)typeof(Startup).Assembly.GetCustomAttributes(typeof(System.Reflection.AssemblyFileVersionAttribute), false).FirstOrDefault();
+            appsettings.Value.Version = version.Version;
             var provider = new FileExtensionContentTypeProvider();
             // Add new mappings
             provider.Mappings[".jsonp"] = "application/javascript";
@@ -124,9 +126,15 @@ namespace SpaStarter
             });
             if (env.IsProduction())
             {
-                app.UseHsts();
+                // using hsts when developing on localhost is a pain so skip it. 
+                // Make sure your appSetting has a different value in production environment if you want HSTS and redirection.
+                if (appsettings.Value.DeployDomain != "localhost")
+                {
+                    app.UseHsts();
+                    app.UseHttpsRedirection();
+                }
                 app.UseResponseCompression();
-                app.UseHttpsRedirection();
+                
             }
 
             using StreamReader iisUrlRewriteStreamReader = File.OpenText("IISUrlRewrite.xml");
@@ -134,7 +142,6 @@ namespace SpaStarter
             app.UseRewriter(options);
             app.UseMiddleware<SecurityHeadersMiddleware>();
 
-            // app.UseAuthorization();
             app.UseDefaultFiles(new DefaultFilesOptions
             {
                 DefaultFileNames = new List<string> { "index.html" }
@@ -156,7 +163,7 @@ namespace SpaStarter
                     if (env.IsDevelopment())
                     {
                         // Ensure that you start webpack-dev-server - run "build:hotdev" npm script
-                        // Also if you install the npm task runner extension then the webpack-dev-server script will run when the solution loads
+                        // Also if you install the npm task runner extension then the webpack-dev-server script will run when the solution loads most of the time
                         // spa.UseProxyToSpaDevelopmentServer("http://localhost:8085"); //only needed if you are doing MVC with razor pages.
                     }
                 });

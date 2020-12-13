@@ -8,8 +8,8 @@ import { environment as globals } from './environment';
 console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV === 'development') {
     console.log('We are in development!');
-    globals.apiUrl = 'http://localhost:55305/api/';
-    globals.swaggerUrl = 'http://localhost:55305/swagger/';
+    globals.apiUrl = 'https://localhost:44385/api/';
+    globals.swaggerUrl = 'https://localhost:44385/swagger/';
 }else if (process.env.NODE_ENV === 'production') {
     console.log('We are in production!');
     globals.apiUrl = '/api/';

@@ -20,18 +20,15 @@
     }
 
     public StartAnimation() {
-        var self = this;
+        let self = this;
         self.currentMessageIndex++;
         if (self.currentMessageIndex >= self.messages().length) {
             self.currentMessageIndex = 0;
         }
         self.message(self.messages()[self.currentMessageIndex]);
-        var divwidth = $("#animatedplaceholder").width() || 200;
-        var pagewidth = $("#contentWrapper").width() || 1000;
 
-        var center = pagewidth-(divwidth/2);
         $("#animated").animate({
-            width: [center, "swing"],
+            width: [$("#animation-wrapper").width(), "swing"],
             opacity: ["toggle", "swing"]
         }, 3000, "swing", function () {
         }).delay(3000).animate({

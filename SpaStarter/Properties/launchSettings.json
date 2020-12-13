@@ -1,18 +1,21 @@
-﻿{
-  "$schema": "http://json.schemastore.org/launchsettings.json",
+{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
-    "iisExpress": {
-      "applicationUrl": "http://localhost:55305",
+    "iis": {
+      "applicationUrl": "http://localhost/SpaStarter",
       "sslPort": 0
+    },
+    "iisExpress": {
+      "applicationUrl": "http://localhost:7085",
+      "sslPort": 44385
     }
   },
   "profiles": {
-    "IIS Express": {
+    "IIS Express HotDev": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "swagger",
+      "launchUrl": "http://localhost:8085",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -24,14 +27,13 @@
         "ASPNETCORE_ENVIRONMENT": "Production"
       }
     },
-    "VisualStudio: Connect to HotDev proxy": {
-      "commandName": "Project",
+    "IIS Express Swagger": {
+      "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "http://localhost:8085/",
+      "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "applicationUrl": "http://localhost:55305"
+      }
     }
   }
 }
